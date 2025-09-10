@@ -8,5 +8,5 @@ def counting(arr):
     for i in range(len(count)):
         sorted_arr.extend([i]*count[i])
     return sorted_arr
-arr=[1,4,3,2,5,6]
+arr=[1,4,3,2,5,7]
 print(counting(arr))
