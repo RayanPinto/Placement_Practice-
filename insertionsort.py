@@ -8,6 +8,5 @@ def insertionsort(arr):
             j-=1
         arr[j+1]=key
     return arr
-arr=[5,22,42,2,56,4,1]
+arr=[3,3,5,75,2,11,3,45,663,3,23,43]
 print(insertionsort(arr))
-            
