@@ -1,14 +1,13 @@
-def binarysearch(arr,left,right,key):
+def binarysearch(arr,key,left,right):
     if(left<=right):
-        
         mid=(left+right)//2
         if arr[mid]==key:
-           return mid
+            return mid
         elif arr[mid]<key:
-          return binarysearch(arr,mid+1,right,key)
+            return binarysearch(arr,key,mid+1,right)
         else:
-            return binarysearch(arr,left,mid-1,key)
+            return binarysearch(arr,key,left,mid-1)
     return -1
 arr=[1,2,3,4,5,6]
-print(binarysearch(arr,0,len(arr)-1,5))
-    
+key=6
+print(binarysearch(arr,key,0,len(arr)-1))
