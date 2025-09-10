@@ -10,12 +10,11 @@ def binaryserch(arr,key):
         else:
             right=mid-1
     return -1
-arr=[5,4,2,5,73,1,1,45,67]
-key=67
-for i ,j in enumerate(arr):
-    if arr[i]==key:
-         print(arr[i])
+arr=[1,2,3,4,5,6,7,1,2,3,5,6,7]
+key=7
+
          
     
 arr.sort()
+print(arr)
 print(binaryserch(arr,key))
