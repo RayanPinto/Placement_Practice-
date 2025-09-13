@@ -2,11 +2,11 @@ def counting(arr):
     n=len(arr)
     max_val=max(arr)
     count=[0]*(max_val+1)
-    for num in arr:
-        count[num]+=1
-    sorted_arr=[]
+    for i in arr:
+        count[i]+=1
+    res=[]
     for i in range(len(count)):
-        sorted_arr.extend([i]*count[i])
-    return sorted_arr
-arr=[1,4,3,2,5,7]
+        res.extend([i]*count[i])
+    return res
+arr=[1,6,5,3,2,4,5,2,3,4,1]
 print(counting(arr))

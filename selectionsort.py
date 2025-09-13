@@ -8,6 +8,5 @@ def selectionsort(arr):
         min_value=arr.pop(min_index)
         arr.insert(i,min_value)
     return arr
-arr=[3,3,5,75,2,11,3,45,663,3,23,43]
+arr=[1,6,5,3,2,4,5,2,3,4,1]
 print(selectionsort(arr))
-        
