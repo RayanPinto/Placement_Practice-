@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct node{
-    int data;
-    struct node* next;
-};
-void printlist(struct node*n){
+int printhead(struct node *n){
     while(n!=NULL){
-        printf("%d ",n->data);
-        n=n->next;
+        printf("%d\t",n->data);
+        n->next;
     }
-}
-int main(){
 
-    struct node*head;
-    struct node*second;
-    struct node*third;
+}
+struct node{
+int data;
+struct node *next;
+};
+int main(){
+    struct node *head;
+    struct node *second;
+    struct node *third;
     head=(struct node*)malloc(sizeof(struct node));
     second=(struct node*)malloc(sizeof(struct node));
     third=(struct node*)malloc(sizeof(struct node));
@@ -22,8 +22,8 @@ int main(){
     head->next=second;
     second->data=4;
     second->next=third;
-    third->data=5;
+    third->data;
     third->next=NULL;
-    printlist(head);
+    printhead(head);
     return 0;
 }
