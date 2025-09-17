@@ -1,16 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
-int printhead(struct node *n){
-    while(n!=NULL){
-        printf("%d\t",n->data);
-        n->next;
-    }
 
-}
 struct node{
 int data;
 struct node *next;
 };
+int printhead(struct node *n){
+    while(n!=NULL){
+        printf("%d\t",n->data);
+        n=n->next;
+    }
+return 0;
+}
 int main(){
     struct node *head;
     struct node *second;
