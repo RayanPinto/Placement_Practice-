@@ -3,46 +3,25 @@ def isgoal(x,y,t):
 from collections import deque
 def bfs(cx,cy,t):
     q=deque()
-    visited=set()
+    v=set()
     q.append((0,0))
-    print(q)
     while q:
         x,y=q.popleft()
         if isgoal(x,y,t):
             print(f"Goal reached ({x},{y})")
             return True
-        if (x,y) in visited:
+        if (x,y) in v:
             continue
-            print(x,y)
-        visited.add((x,y))
-        print(f"Visited:({x},{y})")
+        v.add((x,y))
+        print(f"Visited : ({x},{y})")
         q.append((cx,y))
-        print(q)
         q.append((x,cy))
-        print(q)
-        
-
         q.append((0,y))
-        print(q)
-
-
         q.append((x,0))
-        print(q)
-
         tr=min(x,cy-y)
-        print(q)
-
         q.append((x-tr,y+tr))
-        print(q)
-
-
-        tr=min(cx-x,y)
-        print(q)
-
-
+        tr=min(y,cx-x)
         q.append((x+tr,y-tr))
-        print(q)
-
-    print("Solution not possible")
     return False
 bfs(4,3,2)
+    
