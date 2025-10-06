@@ -14,7 +14,7 @@ arr=[1,2,3,4,5,6,7,1,2,3,5,6,7]
 key=7
 
          
-    
+
 arr.sort()
 print(arr)
 print(binaryserch(arr,key))
