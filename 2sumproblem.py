@@ -7,7 +7,6 @@ def tow_sum(arr,tar):
             return res[diff],i
         res[num]=i
         print(res)
-        
 print(tow_sum([2,7,11,15], 9))  # (0,1)
 
             
