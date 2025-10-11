@@ -1,10 +1,8 @@
-def rayan(s):
-    first=max(s)
-    second=0
-    for i in s:
-        if i>second and i<first:
-            second=i
-    print(first)
-    print(second)
-rayan([1,5,6,4])
-    
+def rayan(arr):
+    num1=max(arr)
+    num2=0
+    for i in arr:
+        if num1>i>num2:
+            num2=i
+    return num1,num2
+print(rayan(arr=[2,3,4,5]))
