@@ -1,10 +1,10 @@
 def counting(arr):
     n=len(arr)
+    res=[]
     max_val=max(arr)
     count=[0]*(max_val+1)
     for i in arr:
         count[i]+=1
-    res=[]
     for i in range(len(count)):
         res.extend([i]*count[i])
     return res

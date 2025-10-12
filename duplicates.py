@@ -6,5 +6,4 @@ for i in arr:
         seen.add(i)
     else:
         res.append(i)
-print(res)
-        
+        print(i)
