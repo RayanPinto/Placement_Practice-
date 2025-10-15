@@ -1,20 +1,22 @@
 from collections import deque
-queue=deque([(5,0)])
-visited=set()
-while queue:
-    x,y=queue.popleft()
-    if x==0:
-        print("we did it")
-        break
-    if y in visited:
-        continue
-    visited.add(y)
-    print(visited)
-    queue.append((x-1,y+1))
-    print(queue)
-    queue.append((x//2,y+1))
-    print(queue)
-    queue.append((x-(2*x/2),y+1))
-    print(queue)
-    
-
+def rayan(n)->int:
+    q=deque()
+    q.append([n,0])
+    print(q)
+    v=set()
+    while q:
+        x,y=q.popleft()
+        if(x==0):
+            return y
+        if x in v:
+            continue
+        v.add(x)
+        print(v)
+        q.append((x-1,y+1))
+        print(q)
+        q.append((x//2,y+1))
+        print(q)
+        q.append((x-(2*x//2),y+1))
+        print(q)
+    return 0
+print(rayan(5))
