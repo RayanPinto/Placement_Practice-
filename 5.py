@@ -1,44 +1,48 @@
-import re
-from tkinter import messagebox
+from tkinter import messagebox 
+mb=messagebox.showerror
+mbb=messagebox.showinfo
 import tkinter as tk
-def validate_inputs():
-    name=ne.get().strip()
-    email=ee.get().strip()
-    password=pe.get().strip()
-    if not name:
-        messagebox.showerror("Error","Name cannot be empty")
+import re
+
+
+def vi():
+    n=ne.get().strip()
+    e=ee.get().strip()
+    p=pe.get().strip()
+    if not n:
+        mb("Error","fuck off")
         return
-    if not email:
-        messagebox.showerror("Error","Email cannot be empty")
-        return 
-    if not password:
-        messagebox.showerror("Error", "Password cannot be empty")
+    if not e:
+        mb("Error","fuck off")
         return
-    email_pattern=r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0]{2,}$'
-    if not re.match(email,email_pattern):
-        messagebox.showerror("Error","invalid email found")
+    ep=r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    if not re.match(ep,e):
+        mb("Error","asdfghj")
+    if not p:
+        mb("Error","fuck off")
         return
-    if not any(char.isdight() for char in password):
-        messagebox.showerror("Error","password should have atleast 1 digit")
-        return 
-    if not any(char.isupper() for char in password):
-        messagebox.showerror("Error","Password must atleast an uppercase letter ")
+    if not any(ch.isdigit() for ch in p):
+        mb("Error","fuck off")
         return
-    if len(password)<8:
-        messagebox.showerror("Error","password must contain 8 characters")
-        return 
-    messagebox.showinfo("Success","form submitted ")
+    if not any(ch.isupper() for ch in p):
+        mb("Error","fuck off")
+        return
+    if len(p)<8:
+        mb("Error","fuck off")
+        return
+    mbb.showinfo("Success","form submitted")
 root=tk.Tk()
 root.title("User registration form")
-root.geometry("400x300")
-tk.Label(root,text="Name:",font=("Arial",12)).pack(pady=5)
+root.geometry("700x800")
+tk.Label(root,font=("Arial",12),text="Name:").pack(pady=5)
 ne=tk.Entry(root,font=("Arial",12))
-ne.pack(pady=5)
-tk.Label(root,text="Email:",font=("Arial",12))
-ee.pack(pady=5)
-pe=tk.Entry(root,font=("Arial",12)).pack(pady=5)
-tk.Label(root,text="Password:",font=("Arial",12))
-ne.pack(pady=5)
-ee=tk.Entry(root,font=("Arial",12)).pack(pady=5)
-submit=tk.Button(root,text="Submit",command=validate_inputs,font=("Arial",12)).pack(pady=5)
+ne.pack(pady=10)
+tk.Label(root,font=("Arial",12),text="email:").pack(pady=5)
+ee=tk.Entry(root,font=("Arial",12))
+ee.pack(pady=10)
+tk.Label(root,font=("Arial",12),text="password:").pack(pady=5)
+pe=tk.Entry(root,font=("Arial",12))
+pe.pack(pady=10)
+submit=tk.Button(root,text="Button",command=vi,font=("Arial",12))
+submit.pack(pady=10)
 root.mainloop()
