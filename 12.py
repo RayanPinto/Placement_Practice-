@@ -11,9 +11,13 @@ for right in range(n):
         left+=1
     
     
-    if(winsum/k>maxsum):
+    if(winsum>maxsum):
         maxsum=winsum
+        si=left
+        ri=right
         
         
-    
+res=[]
+res.extend([4,5])
 print(maxsum)
+print(max(res))
