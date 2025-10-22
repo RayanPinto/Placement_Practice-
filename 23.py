@@ -20,7 +20,34 @@ class linkedlist:
             print(current.data,end="->")
             current=current.next
         print("None")
+    def delete(self,value):
+        current=self.head
+        if current is not None and current.data==value:
+            self.head=current.next
+            return
+        prev=None
+        while current is not None and current.data!=value:
+            prev=current
+            current=current.next
+        if current is None:
+            print("value not found")
+            return
+        prev.next=current.next
+    def reversenode(self):
+        current=self.head
+        prev=None
+        while current is not None:
+            next_node=current.next
+            current.next=prev
+            prev=current
+            current=next_node
+        self.head=prev
+            
+            
+        
 l=linkedlist()
 l.append(20)
 l.append(30)
+l.display()
+l.reversenode()
 l.display()
