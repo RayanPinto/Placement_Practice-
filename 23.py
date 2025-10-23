@@ -55,6 +55,20 @@ class linkedlist:
             print("Index is out of range")
             return 
         prev.next =current.next
+    def checkingcycle(self):
+        slow=self.head
+        fast=self.head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                return True
+        return False
+    def makingcycle(self):
+        current=self.head
+        while current.next is not None:
+            current=current.next
+        current.next=self.head.next
 ll=linkedlist()
 ll.append(10)
 ll.append(20)
@@ -63,3 +77,9 @@ ll.reversenode()
 ll.display()
 ll.deletenodebyindex(0)
 ll.display()
+ll.append(20)
+ll.append(10)
+ll.display()
+ll.makingcycle()
+check=ll.checkingcycle()
+print(check)
