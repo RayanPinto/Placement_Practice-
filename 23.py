@@ -1,4 +1,4 @@
-class Node:
+class node:
     def __init__(self,data):
         self.data=data
         self.next=None
@@ -6,48 +6,60 @@ class linkedlist:
     def __init__(self):
         self.head=None
     def append(self,data):
-        newnode=Node(data)
+        newnode=node(data)
         if self.head is None:
             self.head=newnode
             return
         current=self.head
-        while(current.next is not None):
+        while current.next is not None:
             current=current.next
         current.next=newnode
     def display(self):
         current=self.head
-        while(current is not None):
+        while current is not None:
             print(current.data,end="->")
             current=current.next
         print("None")
-    def delete(self,value):
+    def reversenode(self):
+        prev=None
         current=self.head
+        while(current is not None):
+            nextnode=current.next
+            current.next=prev
+            prev=current
+            current=nextnode
+        self.head=prev
+    def deletenode(self,value):
+        current=self.head
+        prev=None
         if current is not None and current.data==value:
             self.head=current.next
             return
-        prev=None
         while current is not None and current.data!=value:
             prev=current
             current=current.next
         if current is None:
-            print("value not found")
+            print("Value not found")
             return
         prev.next=current.next
-    def reversenode(self):
+    def deletenodebyindex(self,index):
         current=self.head
-        prev=None
-        while current is not None:
-            next_node=current.next
-            current.next=prev
+        if index==0:
+            self.head=current.next
+            return
+        while current is not None and count!=index:
             prev=current
-            current=next_node
-        self.head=prev
-            
-            
-        
-l=linkedlist()
-l.append(20)
-l.append(30)
-l.display()
-l.reversenode()
-l.display()
+            current=current.next
+            count+=1
+        if current is None:
+            print("Index is out of range")
+            return 
+        prev.next =current.next
+ll=linkedlist()
+ll.append(10)
+ll.append(20)
+ll.display()
+ll.reversenode()
+ll.display()
+ll.deletenodebyindex(0)
+ll.display()
