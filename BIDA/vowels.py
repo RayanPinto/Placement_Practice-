@@ -10,6 +10,6 @@ def rayan(text):
             else:
                 con+=1
     return count,con
-text="rAyan"
+text="rAyanpinto"
 c,n=rayan(text)
 print(c,n)
