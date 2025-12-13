@@ -1,4 +1,6 @@
 from collections import deque
+
+
 def rayan(n)->int:
     q=deque()
     q.append([n,0])

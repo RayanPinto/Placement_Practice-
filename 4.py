@@ -25,5 +25,5 @@ for right in range(n):
         
 print(maxsum)
 print(start_index,end_index)
-print(f"subarray :{arr[start_index:end_index+1]}")
+print(f"subarray :{arr[start_index:end_index+1]}"
     
